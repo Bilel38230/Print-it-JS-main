@@ -37,29 +37,25 @@ arrow_left.addEventListener("click", () => {
 	let dot_selected = document.querySelector(".dot_selected")
 	if (dot_selected.previousElementSibling != null) {
 		dot_selected.previousElementSibling.classList.add("dot_selected")
-		dot_selected.classList.remove("dot_selected")
 		imageCounter--
-		modifierImageText()
 	} else {
 		dots.lastElementChild.classList.add("dot_selected")
-		dot_selected.classList.remove("dot_selected")
-		imageCounter = 3
-		modifierImageText()
+		imageCounter = slides.length - 1
 	}
+	dot_selected.classList.remove("dot_selected")
+	modifierImageText()
 })
 arrow_right.addEventListener("click", () => {
 	let dot_selected = document.querySelector(".dot_selected")
 	if (dot_selected.nextElementSibling != null) {
 		dot_selected.nextElementSibling.classList.add("dot_selected")
-		dot_selected.classList.remove("dot_selected")
 		imageCounter++
-		modifierImageText()
 	} else {
 		dots.firstElementChild.classList.add("dot_selected")
-		dot_selected.classList.remove("dot_selected")
 		imageCounter = 0
-		modifierImageText()
 	}
+	dot_selected.classList.remove("dot_selected")
+	modifierImageText()
 })
 
 
